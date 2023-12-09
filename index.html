@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <nav class="navbar-wrapper">
+            <section class="nav-left">
+
+                <img src="./assets/navbar/website-logo.svg" alt="website-logo" />
+                <span>FashionForAll</span>
+
+            </section>
+            <section class="nav-center nav-items">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Products</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul>
+            </section>
+            <section class="nav-right nav-items">
+                <div class="search">
+                    <img src="./assets/navbar/search-icon.svg" alt="search-icon" />
+                    <span>Search</span>
+                </div>
+                <div class="cart">
+                    <img src="./assets/navbar/cart-icon.svg" />
+                    <span>Cart</span>
+                </div>
+                <div class="get-started">
+                    <button class="get-started-btn">Get started</button>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <nav class="page-direction">
+        <span>Home</span>
+        <img src="./assets/navbar/arrow-direction.svg" />
+        <span>Featured Store</span>
+        <img src="./assets/navbar/arrow-direction.svg" />
+        <span>Product Detail</span>
+
+    </nav>
+
+
+    <section class="main-image">
+        <div class="child-image-wrapper">
+            <img src="./assets/main-image/child-model.svg">
+        </div>
+        <div class="slanted-rectangle">
+
+        </div>
+        <div class="thread-design">
+            <img src="./assets/main-image/dotted-thread.svg" alt="">
+        </div>
+        <div class="rotated-box">
+            <div class="rotated-box-wrapper">
+                <div class="box-heading-1">
+                    Trendy Styles..
+                </div>
+                <div class="box-heading-2">
+                    Thousands styles More!
+                </div>
+                <div class="box-description">
+                    Having a pet means you have more joy, a new friend, a happy person who will always be with you to
+                    have fun. We have 200+ different pets that can meet your needs!
+                </div>
+                <div class="box-buttons">
+                    <button class="left-button">
+                        Shop collections
+                        <img src="./assets/sign-up-card/arrow.svg" />
+                    </button>
+                    <div class="right">
+                        <button class="right-button">
+                            <img src="./assets/main-image/play-icon.svg" />
+                        </button>
+                        <span>See How It Works</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="featured-title">
+        Our Featured Store
+    </section>
+
+
+    <main class="store-content">
+        <div class="filter-container">
+            <div class="filter-heading">Filter</div>
+            <div class="filter-groups">
+                <div class="filter-group gender">
+                    <h5>Gender</h5>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="gender" id="gender-male">
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="gender" id="gender-female">
+                        <label for="gender-female">Female</label>
+                    </div>
+
+                </div>
+                <div class="filter-group age">
+                    <h5>Age group</h5>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="age-group" id="adult">
+                        <label for="adult">Adult</label>
+                    </div>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="age-group" id="children">
+                        <label for="children">Children</label>
+                    </div>
+                </div>
+                <div class="filter-group price">
+                    <h5>Price</h5>
+                    <div class="price-input">
+                        <label>Min</label>
+                        <input type="text" name="" id="">
+                        <img src="./assets/filter-group/filter-price-arrow.svg"/>
+                        <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg"/>
+                        <label>Max</label>
+                        <input type="text" name="" id="">
+                        <img src="./assets/filter-group/filter-price-arrow.svg"/>
+                    </div>
+                </div>
+                <div class="filter-group size">
+                    <h5>Size</h5>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="size" id="gender-male">
+                        <label for="gender-male">Small</label>
+                    </div>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="size" id="gender-male">
+                        <label for="gender-male">Medium</label>
+                    </div>
+                    <div class="filter-tags">
+                        <input type="checkbox" name="size" id="gender-male">
+                        <label for="gender-male">High</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="clothing-cards">
+            <div class="display-clothing-heading-group">
+                <div class="display-clothing-title">
+                    <span class="style-heading">Ankara styles</span>
+                    <span class="style-gender-type">Male & Female</span>
+                </div>
+                <div class="display-clothing-sortBy">
+                    <button>
+                        Sort by: Popular
+                        <img src="./assets/main-store-content/sort-down-arrow.svg" />
+                    </button>
+                </div>
+            </div>
+            <div class="display-clothing-cards">
+                <div class="clothing-container" id="clothingContainer"></div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <section class="sign-up-card">
+        <div class="sign-up-card-wrapper">
+            <h3>Sign up now so your selected item are saved to your personal cart.</h3>
+            <form class="sign-up-card-form">
+                <input placeholder="Enter your Email" type="email" name="" id="">
+                <button>Sign up now <img src="./assets/sign-up-card/arrow.svg" /></button>
+            </form>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <section class="footer-left">
+                <div class="top">
+                    <img src="./assets/footer/footer-logo.svg" alt="website-logo" />
+                    <span>FashionForAll</span>
+                </div>
+                <div class="center">
+                    FashionForAll. Vestibulum non est nisl. Donec eget sodales nisl. Donec ut velit erat.
+                </div>
+                <div class="bottom">
+                    <span>© 2022 All rights reserved.</span>
+                </div>
+            </section>
+            <section class="footer-right">
+                <div class="right-list">
+                    <div class="items">Explore</div>
+                    <div class="items">Product</div>
+                    <div class="items">Sell Your Product</div>
+                    <div class="items">Pricing</div>
+                    <div class="items">Reviews</div>
+                </div>
+                <div class="right-list">
+                    <div class="items">Privacy Policy</div>
+                    <div class="items">Legal</div>
+                    <div class="items">Terms of service</div>
+                    <div class="items">Help center</div>
+                    <div style="color: rgba(41, 50, 65, 1);font-weight: 700;" class="items">Social Media</div>
+                    <div class="social">
+                        <img src="./assets/footer/social-insta.svg" alt="instagram-handle" />
+                        <img src="./assets/footer/social-facebook.svg" alt="facebook-handle" />
+                        <img src="./assets/footer/social-youtube.svg" alt="youtube-handle" />
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
