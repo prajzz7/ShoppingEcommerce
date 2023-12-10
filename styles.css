@@ -53,7 +53,7 @@ p,h1,h2,h3,h4,h5,h6,input {
 
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     
 }
 .nav-center li {
@@ -113,7 +113,9 @@ p,h1,h2,h3,h4,h5,h6,input {
     color: rgba(55, 52, 169, 1);
 
 }
-
+.page-direction-active{
+    color: rgba(186, 186, 186, 1);
+}
 .page-direction img {
     width: 3px;
     height: 6px;
@@ -173,7 +175,8 @@ p,h1,h2,h3,h4,h5,h6,input {
 .rotated-box{
     background-color: rgba(235, 235, 255, 1);
     height: 55vh;
-    width: 35vw;
+    width: 38vw;
+    min-width: 350px;
     position: absolute;
     right: 0vw;
     display: flex;
@@ -563,7 +566,7 @@ main.store-content{
     border-radius: 20px;
     position: absolute;
     right: 10px;
-    top: -25px;
+    top: 15px;
 }
 .card-cart-icon{
     width: 24px;
@@ -627,18 +630,329 @@ main.store-content{
 
 
 
-/* @media only screen and (max-width: 768px){
-   .nav-items{
+.menu-toggle {
     display: none;
-   }
-   .navbar-wrapper{
-    display: flex;
-    justify-content: center;
-   }
-} */
+    color: #3734A9;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
 
-
-
-@media only screen and (max-width: 950px) {
+.modal {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.96);
     
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #3734A9;
+    border-radius: 30px;
+    color: #fff;
+    width: 80%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.modal-links {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-links li {
+    padding: 10px;
+}
+
+.modal-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (width <= 950px) {
+    .menu-toggle{
+        display: flex;
+    }
+    .elements-hidden{
+        display: none;
+    }
+    .nav-right{
+        display: flex;
+        gap: 1rem;
+    }
+    .modal.show{
+        display: block;
+    }
+    .slanted-rectangle{
+        left: -22%;
+    }
+    .child-image-wrapper {
+        left: 10%;
+    }
+    .sign-up-card-wrapper{
+        width: 80%;
+    }
+    .sign-up-card h3{
+        font-size: 17px;
+    }
+    .sign-up-card button{
+        font-size: 11px;
+    }
+
+    .footer-right{
+        gap: 20px;
+    }
+}
+
+@media (width <= 800px){
+    .child-image-wrapper{
+        display: none;
+    }
+    .slanted-rectangle{
+        display: none;
+    }
+    .rotated-box{
+        position: static;
+        margin: auto;
+    }
+    .sign-up-card h3{
+        font-size: 13px;
+    }
+    .sign-up-card button{
+        font-size: 9px;
+    }
+    .sign-up-card img{
+        height: 12px;
+        width: 15px;
+    }
+    .footer{
+        padding: 0;
+    }
+}
+
+@media (width <= 650px){
+    .nav-left span{
+        font-size: 20px;
+    }   
+    .nav-left img{
+        height: 35px;
+        width: 35px;
+    }
+    .page-direction{
+        font-size: 15px;
+    }
+    .nav-right img{
+        height: 18px;
+        width: 18px;
+    }
+    .nav-right button{
+        display: none;
+    }
+
+    section.featured-title{
+        font-size: 33px;
+    }
+    .display-clothing-heading-group {
+        padding-left: 0px;
+    }
+    .display-clothing-title{
+        display: flex;
+        align-items: center;
+    }
+    .display-clothing-title .style-heading{
+        padding: 0 10px 0 0;
+        font-size: 16px;
+    }
+    .display-clothing-title .style-gender-type{
+        font-size: 10px;
+    }
+    .filter-container {
+        display: none !important; 
+    }
+
+    div.filter-button {
+        display: block;
+    }
+    .sign-up-card h3{
+        font-size: 11px;
+    }
+    .sign-up-card button{
+        font-size: 7px;
+    }
+    .sign-up-card img{
+        height: 10px;
+        width: 13px;
+    }
+
+
+    .top{
+        gap: 0.5rem;
+    }
+    .top img{
+        width: 35px;
+        height: 35px;
+    }
+    .top span {
+        font-size: 20px;
+    }
+    .center{
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    .bottom{
+        font-size: 14px;
+    }
+    div.items{
+        font-size: 12px;
+    }
+    .social img{
+        height: 15px;
+        width: 15px;
+    }
+}
+
+@media (width <= 425px){
+    .nav-left span{
+        font-size: 17px;
+    }   
+    .nav-left img{
+        height: 35px;
+        width: 35px;
+    }
+    .nav-right img{
+        height: 16px;
+        width: 16px;
+    }
+    .page-direction{
+        font-size: 10px;
+        padding: 25px 15px;
+    }
+    .main-image{
+        justify-content: center;
+    }
+    .rotated-box{
+        transform: rotate(0deg);
+        height: 50vh;
+    }
+    .rotated-box-wrapper{
+        transform: rotate(0deg);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .box-heading-1{
+        font-size: 32px;
+    }
+    .box-heading-2{
+        font-size: 16px;
+    }
+    .box-description{
+        font-size: 8px;
+    }
+    .box-buttons{
+        font-size: 8px;
+    }
+    
+    .box-buttons{
+        transform: scale(0.8);
+    }
+    section.featured-title{
+        margin: 30px;
+        font-size: 26px;
+    }
+    .display-clothing-sortBy button{
+        padding: 8px;
+    }
+    .display-clothing-sortBy span{
+        font-size: 9px;
+    }
+
+    .sign-up-card img{
+        display: none;
+    }
+
+
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    div.center,
+    div.bottom{
+        text-align: left;
+    }
+    
+    .footer-right {
+        justify-content: space-between;
+    }
+    .items{
+        display: flex;
+    }
+}
+
+
+.filter-button {
+    display: none;
+    cursor: pointer;
+    background-color: rgba(55, 52, 169, 1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-filter {
+    
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content-filter {
+   
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+    
+}
+
+@media (height <= 450px){
+    .navbar-wrapper{
+        height: fit-content;
+    }
+    .page-direction{
+        margin-top: 50px;
+    }
 }

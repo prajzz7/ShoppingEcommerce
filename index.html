@@ -11,27 +11,30 @@
 <body>
     <header class="navbar">
         <nav class="navbar-wrapper">
+            <div class="menu-toggle" id="mobile-menu">
+                ☰
+            </div>
             <section class="nav-left">
 
                 <img src="./assets/navbar/website-logo.svg" alt="website-logo" />
                 <span>FashionForAll</span>
 
             </section>
-            <section class="nav-center nav-items">
+            <section class="nav-center elements-hidden">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/">Products</a></li>
                     <li><a href="/">Contact</a></li>
                 </ul>
             </section>
-            <section class="nav-right nav-items">
+            <section class="nav-right ">
                 <div class="search">
                     <img src="./assets/navbar/search-icon.svg" alt="search-icon" />
-                    <span>Search</span>
+                    <span class="elements-hidden">Search</span>
                 </div>
                 <div class="cart">
                     <img src="./assets/navbar/cart-icon.svg" />
-                    <span>Cart</span>
+                    <span class="elements-hidden">Cart</span>
                 </div>
                 <div class="get-started">
                     <button class="get-started-btn">Get started</button>
@@ -39,12 +42,22 @@
             </section>
         </nav>
     </header>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="close-btn">&times;</span>
+            <ul class="modal-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
     <nav class="page-direction">
         <span>Home</span>
         <img src="./assets/navbar/arrow-direction.svg" />
         <span>Featured Store</span>
         <img src="./assets/navbar/arrow-direction.svg" />
-        <span>Product Detail</span>
+        <span class="page-direction-active">Product Detail</span>
 
     </nav>
 
@@ -87,13 +100,9 @@
             </div>
         </div>
     </section>
-
-
     <section class="featured-title">
         Our Featured Store
     </section>
-
-
     <main class="store-content">
         <div class="filter-container">
             <div class="filter-heading">Filter</div>
@@ -108,7 +117,6 @@
                         <input type="checkbox" name="gender" id="gender-female">
                         <label for="gender-female">Female</label>
                     </div>
-
                 </div>
                 <div class="filter-group age">
                     <h5>Age group</h5>
@@ -126,11 +134,11 @@
                     <div class="price-input">
                         <label>Min</label>
                         <input type="text" name="" id="">
-                        <img src="./assets/filter-group/filter-price-arrow.svg"/>
-                        <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg"/>
+                        <img src="./assets/filter-group/filter-price-arrow.svg" />
+                        <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg" />
                         <label>Max</label>
                         <input type="text" name="" id="">
-                        <img src="./assets/filter-group/filter-price-arrow.svg"/>
+                        <img src="./assets/filter-group/filter-price-arrow.svg" />
                     </div>
                 </div>
                 <div class="filter-group size">
@@ -147,7 +155,6 @@
                         <input type="checkbox" name="size" id="gender-male">
                         <label for="gender-male">High</label>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -159,9 +166,63 @@
                 </div>
                 <div class="display-clothing-sortBy">
                     <button>
-                        Sort by: Popular
+                        <span>Sort by: Popular</span>
                         <img src="./assets/main-store-content/sort-down-arrow.svg" />
                     </button>
+                </div>
+            </div>
+            <div class="filter-button" id="filterButton">Filter</div>
+            <div class="modal-filter" id="filterModal">
+                <div class="filter-groups modal-content-filter">
+                    <div class="filter-group gender">
+                        <h5>Gender</h5>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="gender" id="gender-male">
+                            <label for="gender-male">Male</label>
+                        </div>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="gender" id="gender-female">
+                            <label for="gender-female">Female</label>
+                        </div>
+                    </div>
+                    <div class="filter-group age">
+                        <h5>Age group</h5>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="age-group" id="adult">
+                            <label for="adult">Adult</label>
+                        </div>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="age-group" id="children">
+                            <label for="children">Children</label>
+                        </div>
+                    </div>
+                    <div class="filter-group price">
+                        <h5>Price</h5>
+                        <div class="price-input">
+                            <label>Min</label>
+                            <input type="text" name="" id="">
+                            <img src="./assets/filter-group/filter-price-arrow.svg" />
+                            <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg" />
+                            <label>Max</label>
+                            <input type="text" name="" id="">
+                            <img src="./assets/filter-group/filter-price-arrow.svg" />
+                        </div>
+                    </div>
+                    <div class="filter-group size">
+                        <h5>Size</h5>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="size" id="gender-male">
+                            <label for="gender-male">Small</label>
+                        </div>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="size" id="gender-male">
+                            <label for="gender-male">Medium</label>
+                        </div>
+                        <div class="filter-tags">
+                            <input type="checkbox" name="size" id="gender-male">
+                            <label for="gender-male">High</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="display-clothing-cards">
