@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FashionForAll</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -103,57 +103,57 @@
     <section class="featured-title">
         Our Featured Store
     </section>
-    <main class="store-content">
+    <main class="store-content" id="storeContent">
         <div class="filter-container">
             <div class="filter-heading">Filter</div>
             <div class="filter-groups">
                 <div class="filter-group gender">
                     <h5>Gender</h5>
                     <div class="filter-tags">
-                        <input type="checkbox" name="gender" id="gender-male">
-                        <label for="gender-male">Male</label>
+                        <input type="checkbox" name="gender" id="filterMale" >
+                        <label for="filterMale">Male</label>
                     </div>
                     <div class="filter-tags">
-                        <input type="checkbox" name="gender" id="gender-female">
-                        <label for="gender-female">Female</label>
+                        <input type="checkbox" name="gender" id="filterFemale">
+                        <label for="filterFemale">Female</label>
                     </div>
                 </div>
                 <div class="filter-group age">
                     <h5>Age group</h5>
                     <div class="filter-tags">
-                        <input type="checkbox" name="age-group" id="adult">
-                        <label for="adult">Adult</label>
+                        <input type="checkbox" name="age-group" id="filterAdult" >
+                        <label for="filterAdult">Adult</label>
                     </div>
                     <div class="filter-tags">
-                        <input type="checkbox" name="age-group" id="children">
-                        <label for="children">Children</label>
+                        <input type="checkbox" name="age-group" id="filterChildren">
+                        <label for="filterChildren">Children</label>
                     </div>
                 </div>
                 <div class="filter-group price">
                     <h5>Price</h5>
                     <div class="price-input">
-                        <label>Min</label>
-                        <input type="text" name="" id="">
+                        <label for="filterMin">Min</label>
+                        <input type="text" name="" id="filterMin">
                         <img src="./assets/filter-group/filter-price-arrow.svg" />
                         <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg" />
-                        <label>Max</label>
-                        <input type="text" name="" id="">
+                        <label for="filterMax">Max</label>
+                        <input type="text" name="" id="filterMax">
                         <img src="./assets/filter-group/filter-price-arrow.svg" />
                     </div>
                 </div>
                 <div class="filter-group size">
                     <h5>Size</h5>
                     <div class="filter-tags">
-                        <input type="checkbox" name="size" id="gender-male">
-                        <label for="gender-male">Small</label>
+                        <input type="checkbox" name="size" id="filterSmall" value="Small">
+                        <label for="filterSmall">Small</label>
                     </div>
                     <div class="filter-tags">
-                        <input type="checkbox" name="size" id="gender-male">
-                        <label for="gender-male">Medium</label>
+                        <input type="checkbox" name="size" id="filterMedium" value="Medium">
+                        <label for="filterMedium">Medium</label>
                     </div>
                     <div class="filter-tags">
-                        <input type="checkbox" name="size" id="gender-male">
-                        <label for="gender-male">High</label>
+                        <input type="checkbox" name="size" id="filterHigh" value="Large">
+                        <label for="filterHigh">High</label>
                     </div>
                 </div>
             </div>
@@ -199,34 +199,39 @@
                     <div class="filter-group price">
                         <h5>Price</h5>
                         <div class="price-input">
-                            <label>Min</label>
-                            <input type="text" name="" id="">
+                            <label for="min">Min</label>
+                            <input type="text" name="" id="min">
                             <img src="./assets/filter-group/filter-price-arrow.svg" />
                             <img class="filter-price-separator" src="./assets/filter-group/line-separator.svg" />
-                            <label>Max</label>
-                            <input type="text" name="" id="">
+                            <label for="max">Max</label>
+                            <input type="text" name="" id="max">
                             <img src="./assets/filter-group/filter-price-arrow.svg" />
                         </div>
                     </div>
                     <div class="filter-group size">
                         <h5>Size</h5>
                         <div class="filter-tags">
-                            <input type="checkbox" name="size" id="gender-male">
-                            <label for="gender-male">Small</label>
+                            <input type="checkbox" name="size" id="smallSize">
+                            <label for="smallSize">Small</label>
                         </div>
                         <div class="filter-tags">
-                            <input type="checkbox" name="size" id="gender-male">
-                            <label for="gender-male">Medium</label>
+                            <input type="checkbox" name="size" id="mediumSize">
+                            <label for="mediumSize">Medium</label>
                         </div>
                         <div class="filter-tags">
-                            <input type="checkbox" name="size" id="gender-male">
-                            <label for="gender-male">High</label>
+                            <input type="checkbox" name="size" id="highSize">
+                            <label for="highSize">High</label>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="display-clothing-cards">
-                <div class="clothing-container" id="clothingContainer"></div>
+                <div class="swirl-icon">
+                    <img src="./assets/main-store-content/swirl-symbol.svg" alt="narutomaki-design">
+                </div>
+                <div class="clothing-container" id="clothingContainer">
+                    
+                </div>
                 <div class="pagination" id="pagination"></div>
             </div>
         </div>
@@ -236,7 +241,7 @@
     <section class="sign-up-card">
         <div class="sign-up-card-wrapper">
             <h3>Sign up now so your selected item are saved to your personal cart.</h3>
-            <form class="sign-up-card-form">
+            <form class="sign-up-card-form" name="sign-up-form-name">
                 <input placeholder="Enter your Email" type="email" name="" id="">
                 <button>Sign up now <img src="./assets/sign-up-card/arrow.svg" /></button>
             </form>
@@ -271,7 +276,7 @@
                     <div class="items">Legal</div>
                     <div class="items">Terms of service</div>
                     <div class="items">Help center</div>
-                    <div style="color: rgba(41, 50, 65, 1);font-weight: 700;" class="items">Social Media</div>
+                    <div style="color: rgba(41, 50, 65, 1);font-weight: 700;cursor: auto;" class="items">Social Media</div>
                     <div class="social">
                         <img src="./assets/footer/social-insta.svg" alt="instagram-handle" />
                         <img src="./assets/footer/social-facebook.svg" alt="facebook-handle" />
