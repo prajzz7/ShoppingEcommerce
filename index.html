@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authentic clothes, best deals with the best shopping experience. Purchase clothes for adults, kids, any age group."/>
     <title>FashionForAll</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -165,11 +166,17 @@
                     <span class="style-gender-type">Male & Female</span>
                 </div>
                 <div class="display-clothing-sortBy">
-                    <button>
+                    <button id="sort-by-button">
                         <span>Sort by: Popular</span>
                         <img src="./assets/main-store-content/sort-down-arrow.svg" />
-                    </button>
+                    </button>   
+                    <ul id="sortByDropdown" class="dropdown-content">
+                        <li data-sort="price">Price</li>
+                        <li data-sort="popularity">Popularity</li>
+                        <li data-sort="date">Date</li>
+                    </ul>                 
                 </div>
+                
             </div>
             <div class="filter-button" id="filterButton">Filter</div>
             <div class="modal-filter" id="filterModal">
