@@ -191,6 +191,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         enableScroll()
     });
+
+
+
+    const sortByButton = document.getElementById('sort-by-button')
+    const sortByDropDown = document.getElementById('sortByDropdown')
+    sortByButton.addEventListener('click', toggleDropDown)
+
+    function toggleDropDown(){
+        sortByDropDown.style.display = sortByDropDown.style.display ==='block' ? 'none' : 'block'
+        sortByDropDown.style.zIndex = 100
+    }
 });
 
 
@@ -221,7 +232,7 @@ genderFemaleCheckbox.addEventListener('change', handleGenderCheckboxChange);
 function handleGenderCheckboxChange() {
     const filteredGenderClothing = updateFilteredArray();   
     console.log(filteredGenderClothing);
-    
+
     currentPage = 1;
     if(filteredGenderClothing.length === 0 ){
         displayClothingItems(currentPage,clothingData);
