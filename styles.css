@@ -921,11 +921,20 @@ main.store-content{
         font-size: 9px;
     }
 
-    .sign-up-card img{
-        display: none;
+    .sign-up-card-form{
+        display: flex;
+        flex-direction: column;
     }
-
-
+    .sign-up-card-form button{
+        padding: 8px;
+        font-size: 10px;
+    }
+    .sign-up-card-form input{
+            padding: 8px;
+    }
+    .pagination button{
+        margin: 0;
+    }
     .footer-wrapper {
         flex-direction: column;
         align-items: center;
