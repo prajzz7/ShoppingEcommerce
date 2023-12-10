@@ -136,3 +136,53 @@ updatePagination();
 
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuBtn = document.getElementById('mobile-menu');    
+    const modal = document.getElementById('modal');
+    const closeModalBtn = document.getElementById('close-btn');
+
+    mobileMenuBtn.addEventListener('click', function () {
+        modal.classList.add('show');
+        disableScroll();
+    });
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
+            enableScroll();
+        }
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+
+    function closeModal() {
+        modal.classList.toggle('show');
+    }
+
+
+    const filterButton = document.getElementById("filterButton");
+    const filterModal = document.getElementById("filterModal");
+    const body = document.body;
+
+    function disableScroll() {
+        body.style.overflow = "hidden";
+    }
+
+    function enableScroll() {
+        body.style.overflow = "auto";
+    }
+    
+    filterButton.addEventListener("click", function () {
+        filterModal.style.display = "flex";
+        disableScroll();
+    });
+
+    
+    filterModal.addEventListener("click", function (event) {
+        if (event.target === filterModal) {
+            filterModal.style.display = "none";
+        }
+        enableScroll()
+    });
+});
