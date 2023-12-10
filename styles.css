@@ -43,10 +43,12 @@ p,h1,h2,h3,h4,h5,h6,input {
     color: #3734A9;
     font-size: 24px;
     font-weight: 700;
+    cursor: pointer;
 }
 .nav-left img {
     height: 45px;
     width: 45px;
+    cursor: pointer;
 }
 
 .nav-center ul {
@@ -61,7 +63,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     font-size: 16px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.5);
-
+    cursor: pointer;
 }
 .nav-center a:hover{
     border-bottom: 2px solid #3734A9;
@@ -86,8 +88,14 @@ p,h1,h2,h3,h4,h5,h6,input {
     display: flex;
     align-items: center;
     gap: 16px;
+    cursor: pointer;
 }
-
+.nav-right img{
+    cursor: pointer;
+}
+.nav-right span{
+    cursor: pointer;
+}
 .nav-right button {
     width: 159px;
     height: 50px;
@@ -96,6 +104,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     color: white;
     border: none;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .page-direction{
@@ -111,7 +120,10 @@ p,h1,h2,h3,h4,h5,h6,input {
     font-size: 20px;
     font-weight: 700;
     color: rgba(55, 52, 169, 1);
-
+    
+}
+.page-direction span{
+    cursor: pointer;
 }
 .page-direction-active{
     color: rgba(186, 186, 186, 1);
@@ -214,6 +226,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     justify-content: end;
     align-items: center;
     gap: 16px;
+    
 }
 
 .box-buttons .left-button{
@@ -229,6 +242,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     font-weight: 700;
     padding: 15px;
     border: none;
+    cursor: pointer;
 }
 
 .box-buttons .right-button{
@@ -239,6 +253,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .box-buttons .right{
     box-sizing: border-box;
@@ -251,6 +266,7 @@ p,h1,h2,h3,h4,h5,h6,input {
     font-weight: 400;
     font-size: 10px;
     color: rgba(55, 52, 169, 1);
+    cursor: pointer;
 }
 
 
@@ -371,10 +387,12 @@ main.store-content{
     color: rgba(55, 52, 169, 1);
     font-size: 12px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .display-clothing-cards{
     /* background-color: yellow;     */
+    position: relative;
 }
 
 .sign-up-card{
@@ -502,13 +520,14 @@ main.store-content{
     font-weight: 400;
     color: rgba(127, 132, 141, 1);
     font-family: 'Open Sans', sans-serif;
-    gap: px;
+    gap: 10px;
+    cursor: pointer;
 }
 
 .social{
     display: flex;
     justify-content: space-between;
-    
+    cursor: pointer;
 }
 
 .social img{
@@ -529,19 +548,29 @@ main.store-content{
     justify-content: space-around;
     
 }
-
+.swirl-icon{
+    position: absolute;
+    bottom: 15vh;
+    left: -10vw;
+}
 .card {
     width: 280px;
     margin-bottom: 10px ;
     padding: 5px;
     box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+    
     border: 1px solid #ddd;
     border-radius: 10px;
     box-sizing: border-box;
     text-align: center;
 }
+.card:hover{
+    transform: scale(1.02);
+    transition: transform 0.4s ease-out;
+}
 .card img{
     width: 100%;
+    border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -571,7 +600,7 @@ main.store-content{
 .card-cart-icon{
     width: 24px;
     height: 20px;
-    
+    cursor: pointer;
     
 }
 .card-category{
@@ -649,6 +678,7 @@ main.store-content{
     background-color: rgba(0, 0, 0, 0.96);
     
     align-items: center;
+    
 }
 
 .modal-content {
@@ -659,6 +689,7 @@ main.store-content{
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
+    
 }
 
 .close {
@@ -696,9 +727,14 @@ main.store-content{
     }
     .modal.show{
         display: block;
+        opacity: 1;
+        transition: opacity display 1s ease;
     }
     .slanted-rectangle{
         left: -22%;
+    }
+    div.thread-design{
+        display: none;
     }
     .child-image-wrapper {
         left: 10%;
@@ -787,6 +823,10 @@ main.store-content{
     div.filter-button {
         display: block;
     }
+
+    .swirl-icon{
+        display: none;
+    }
     .sign-up-card h3{
         font-size: 11px;
     }
@@ -844,12 +884,12 @@ main.store-content{
     .main-image{
         justify-content: center;
     }
-    .rotated-box{
-        transform: rotate(0deg);
+    div.rotated-box{
+        transform: rotate(50deg);
         height: 50vh;
     }
-    .rotated-box-wrapper{
-        transform: rotate(0deg);
+    div.rotated-box-wrapper{
+        transform: rotate(-50deg);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -931,7 +971,7 @@ main.store-content{
     left: 0;
     width: 100vw;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.90);
+    background-color: rgba(0, 0, 0, 0.96);
     align-items: center;
     justify-content: center;
     z-index: 999;

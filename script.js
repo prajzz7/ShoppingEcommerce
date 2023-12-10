@@ -38,15 +38,15 @@ const clothingData = [
 const itemsPerPage = 12;
 let currentPage = 1;
 
-function displayClothingItems(page) {
+function displayClothingItems(page, filteredData) {
     const container = document.getElementById('clothingContainer');
     container.innerHTML = '';
 
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    for (let i = startIndex; i < endIndex && i < clothingData.length; i++) {
-        const item = clothingData[i];
+    for (let i = startIndex; i < endIndex && i < filteredData.length; i++) {
+        const item = filteredData[i];
         const card = document.createElement('div');
         card.classList.add('card');
 
@@ -112,27 +112,32 @@ function createLabel(label, value) {
 }
 
 
-function updatePagination() {
+function updatePagination(filteredClothingData) {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = '';
+    const totalPages = Math.ceil(filteredClothingData.length / itemsPerPage);
 
-    const totalPages = Math.ceil(clothingData.length / itemsPerPage);
+    const storeContainer = document.getElementById('storeContent')
 
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
         button.textContent = i;
         button.addEventListener('click', () => {
+            console.log(i)
             currentPage = i;
-            displayClothingItems(currentPage);
-            updatePagination();
+            displayClothingItems(currentPage,filteredClothingData);
+            storeContainer.scrollIntoView({
+                behavior: 'smooth'
+            })
+            updatePagination(filteredClothingData);
         });
         paginationContainer.appendChild(button);
     }
 }
 
 
-displayClothingItems(currentPage);
-updatePagination();
+displayClothingItems(currentPage,clothingData);
+updatePagination(clothingData);
 
 
 
@@ -158,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function closeModal() {
         modal.classList.toggle('show');
+        enableScroll();
     }
 
 
@@ -186,3 +192,45 @@ document.addEventListener('DOMContentLoaded', function () {
         enableScroll()
     });
 });
+
+
+const genderMaleCheckbox = document.getElementById('filterMale');
+const genderFemaleCheckbox = document.getElementById('filterFemale');
+
+
+function updateFilteredArray() {
+    const isMaleChecked = genderMaleCheckbox.checked ;
+    const isFemaleChecked = genderFemaleCheckbox.checked ;
+    
+   
+    const filteredByGender = clothingData.filter(item => {
+        return (
+            (isMaleChecked && item.gender === 'Male') ||
+            (isFemaleChecked && item.gender === 'Female')
+            
+        );
+    });
+
+    return filteredByGender;
+}
+
+
+genderMaleCheckbox.addEventListener('change', handleGenderCheckboxChange);
+genderFemaleCheckbox.addEventListener('change', handleGenderCheckboxChange);
+
+function handleGenderCheckboxChange() {
+    const filteredGenderClothing = updateFilteredArray();   
+    console.log(filteredGenderClothing);
+    
+    currentPage = 1;
+    if(filteredGenderClothing.length === 0 ){
+        displayClothingItems(currentPage,clothingData);
+        updatePagination(clothingData);
+    }
+    else{
+        displayClothingItems(currentPage,filteredGenderClothing);
+        updatePagination(filteredGenderClothing);
+    }    
+ 
+}
+
